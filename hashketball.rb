@@ -145,14 +145,27 @@ end
 def shoe_size(player)
 
   game_hash.each do |key, value|
+<<<<<<< HEAD
                 value[:players].each do |playerHash|
+=======
+    
+    value.each do |key2, value2|
+      
+      if key2 == :players
+        value2.each do |playerHash|
+>>>>>>> 12f089a1942f1d114bc82913a78ff53bcf70e910
           if playerHash[:player_name] == player
             return playerHash[:shoe]
       end
     end
   end
   end
+<<<<<<< HEAD
 
+=======
+  end
+end
+>>>>>>> 12f089a1942f1d114bc82913a78ff53bcf70e910
 
 
 def team_colors(team)
@@ -205,17 +218,19 @@ def big_shoe_rebounds
         value[:players].each do |playerHash|
         if playerHash[:shoe] >= biggest_shoe
           biggest_shoe = playerHash[:shoe]
+        if playerHash[:shoe_size] > biggest_shoe
+          biggest_shoe = playerHash[:shoe_size]
       end
     end
     end
   game_hash.each do |key, value|
   value[:players].each do |player_hash|
   if player_hash[:shoe] == biggest_shoe
+  if player_hash[:shoe_size] == biggest_shoe
     return player_hash[:rebounds]
   end
   end
  end
-  
 end
 
   
